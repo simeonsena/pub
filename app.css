@@ -1,0 +1,14 @@
+h1 {
+    color: rgb(3, 61, 95);
+}
+#special{
+    //font-size: x-large;
+    color: green;
+}
+#special2{
+    color: yellow;
+    font-size: xx-large;
+}
+h3{
+    color: rgb(238, 108, 1);
+}
