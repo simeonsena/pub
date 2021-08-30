@@ -28,7 +28,7 @@
 //     const word = 'stressed';
 //     for(let i = word.lenth -1; i >=0; i--);
     
-    //vowels only 
+    //vowels only  
     function vowelsOnly(word){
        const vowels = ['a','e','i','o','u','A','E','I','O','U'];
        let vowelArray = [];
