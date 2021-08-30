@@ -39,7 +39,7 @@
                    vowelArray.push(vowels[j]);
                }
            }
-       }
+       } 
        let endResult = vowelArray.join('');
        console.log(endResult)
    }
