@@ -123,7 +123,10 @@ for(let prop in chicken){
 
       //3.3 functions
       // functions are considered first class because they are treated like an object. 
-
+// passing functions as arguments
+// Functions in JavaScript are quite flexible because they are essentially treated just like other data types.
+// And as you already know, you can assign functions to variables.
+// For example, you can pass functions as arguments to other functions
       function greet(){
           console.log( 'hi, fuck you!!!')
       }
@@ -134,9 +137,45 @@ for(let prop in chicken){
           func();
           func();
       }
-
+      let funcs =[greet, diss]
+      
+      const myFunc = function add(x,y){
+          return x+y;
+      }
+function giveBirth(){
+    console.log("GIVING BIRTH!!")
+    return function cry(){
+        return "WAAAA!!!"
+    }
+}
       function repeats (num, func){
-          for(let repeat in repeats){
+          for(let i = 0; i < num; i++){
               func();
           }
       } 
+
+     function makeMultiplyFunc(num){ //make a function. its just a regular old value. JS doesn't descriminate
+          return function mult(x){   //returns a function that multiplies some number by that number
+              return num * x;
+          }
+      }
+
+      //JS is SINGLE THREADED. A thread is a single process.
+    //   greet();
+   
+      setTimeout(diss, 1000);
+      setTimeout(greet, 2000);
+      setTimeout(diss, 3000);
+      setTimeout(greet, 4000);
+      setTimeout(diss, 5000);
+      setTimeout(greet, 6000);
+      setTimeout(diss, 7000);
+      setTimeout(greet, 8000);
+      setTimeout(diss, 9000);
+      setTimeout(greet, 10000);
+      setTimeout(diss, 11000);
+      setTimeout(greet, 12000);
+
+
+
+     
