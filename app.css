@@ -1,14 +1,10 @@
 h1 {
     color: rgb(3, 61, 95);
 }
-#special{
-    font-size: x-large;
-    color: green;
+.strikeThrough {
+    text-decoration: line-through;
 }
-#special2{
-    color: yellow;
-    font-size: xx-large;
-}
-h3{
-    color: rgb(238, 108, 10);
-}
+/* input[type="checkbox"] {
+    margin-right: 0.5em;
+    vertical-align: middle;
+  } */
