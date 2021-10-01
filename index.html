@@ -1,27 +1,48 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>C.H.U.D. Project</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='app.css'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+<style>
+    .meme-generator {
+        margin: 20px auto;
+        width: 400px;
+    }
+    .meme-generator label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
 
-
+    .meme-generator input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+    #meme {
+        width: 100%
+    } 
+</style>
 </head>
 <body>
-   
-    <h1 id="main-heading"> ToDo List</h1>
-     <form id="form">
-         <label for="todoInput">Add New ToDo</label>
-         <input type="text" id="todoInput">
-         <input type="button" id="cmdNewtodo" value= "New ToDo">
-     </form>
-    <ul id="todoList">        
-        
-    </ul>
-    <section id ='results'></section>
-    <script src='app.js'></script>
+    
+        <div class="meme-generator">
+         <h1>Dank Meme Creator</h1>
+                  
+         <label>Top Text</label>  
+          <input type="text"  id="topTextInput">
+
+          <label>Bottom Text</label>  
+          <input type="text"  id="bottomTextInput">
+
+          <label>Select an Image</label>  
+         <input type="file"></input> 
+        <button id=generateBtn>Generate Meme</button>
+          <canvas id="meme"></canvas>
+        </div>
+    
+    <script src="main.js"></script>
 </body>
 </html>

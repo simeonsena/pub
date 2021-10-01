@@ -26,6 +26,18 @@
 // violetBtn.addEventListener('click', function(){
 //   makeBody('violet');
 // });
+//partially adapted from https://www.webdeveloper.com/d/314977-strike-the-text-when-check-box-is-checked-in-javascript/2
+// const removeButtons = document.querySelectorAll('li button');
+//const removeList = document.querySelector('#todoList');
+const form = document.querySelector('#add-item')
+const input = document.querySelector('#todoInput')
+const todoList = document.querySelector('#todoList')
+
+todoList.addEventListener('click', function(e){
+  if(e.target.tagName === 'BUTTON'){
+    e.target.parentElement.remove();
+  }
+})
 
 function newtodo(text) {
   let li = document.createElement('li');
@@ -59,6 +71,7 @@ document.getElementById('todoList').addEventListener('click', function (evt) {
 
 document.getElementById('cmdNewtodo').addEventListener('click', addtodo);
 
-document.getElementById('form').addEventListener('submit', function (evt) {
+//prevents page refresh
+document.getElementById('add-item').addEventListener('submit', function (evt) {
   evt.preventDefault();
 });
