@@ -2,19 +2,19 @@
 // const bottomTextInput = document.querySelector('#bottomTextInput')
 // const canvas = document.querySelector('#meme')
 // const input = document.querySelector("#imageFileInput");
-// //const input = document.querySelector('input[type="file"]')
-// // const img = new Image();
-// // input.addEventListener('change', function(e){
+// const input = document.querySelector('input[type="file"]')
+// const img = new Image();
+// input.addEventListener('change', function(e){
 
-// // const reader = new FileReader()
-// // reader.onload = function(){
+// const reader = new FileReader()
+// reader.onload = function(){
     
-// //     img.src = reader.result;
-// //     document.body.appendChild(img);
-// //     updateMemeCanvas(topTextInput.value, bottomTextInput.value,canvas, img);
-// // }
-// //     reader.readAsDataURL(input.files[0])
-// // }, false)
+//      img.src = reader.result;
+//     document.body.appendChild(img);
+//     updateMemeCanvas(topTextInput.value, bottomTextInput.value,canvas, img);
+// }
+//     reader.readAsDataURL(input.files[0])
+// }, false)
 
 
 // let img;
@@ -79,14 +79,16 @@
 // bottomTextInput.addEventListener("change", () => {
 //   updateMemeCanvas( topTextInput.value, bottomTextInput.value, canvas, img);
 // });
+// sample answers in 4.3 Javscripts Events - #10 logo maker Demo
 
 
-
-const topTextInput = document.querySelector("#topTextInput");
-const bottomTextInput = document.querySelector("#bottomTextInput");
+// https://www.youtube.com/watch?v=io5FcMAdLyQ 09/
+const topTextInput = document.querySelector("#top-text");
+const bottomTextInput = document.querySelector("#bottom-text");
 const imageFileInput = document.querySelector("#imageFileInput");
 const canvas = document.querySelector("#meme");
 let image;
+const deleteButton = document.querySelector("#removeBtn");
 
 topTextInput.addEventListener("change", () => {
   updateMemeCanvas(canvas, image, topTextInput.value, bottomTextInput.value);
@@ -96,6 +98,10 @@ bottomTextInput.addEventListener("change", () => {
   updateMemeCanvas(canvas, image, topTextInput.value, bottomTextInput.value);
 });
 
+deleteButton.addEventListener("click", () => {
+canvas.remove();
+})
+
 imageFileInput.addEventListener("change", (e) => {
   const imageDataUrl = URL.createObjectURL(e.target.files[0]);
 
@@ -104,8 +110,7 @@ imageFileInput.addEventListener("change", (e) => {
 
   image.addEventListener("load", () => {
       updateMemeCanvas(canvas, image, topTextInput.value,bottomTextInput.value);
-    },
-    { once: true });
+    },);
 });
 
 
@@ -115,6 +120,7 @@ function updateMemeCanvas(canvas, image, topText, bottomText) {
   const height = image.height;
   const fontSize = Math.floor(width / 10);
   const yOffset = height / 25;
+  
 
   // Update canvas background
   canvas.width = width;
