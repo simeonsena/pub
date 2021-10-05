@@ -82,6 +82,7 @@
 // sample answers in 4.3 Javscripts Events - #10 logo maker Demo
 
 
+// https://www.youtube.com/watch?v=io5FcMAdLyQ 09/
 const topTextInput = document.querySelector("#top-text");
 const bottomTextInput = document.querySelector("#bottom-text");
 const imageFileInput = document.querySelector("#imageFileInput");
