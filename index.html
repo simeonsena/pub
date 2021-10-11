@@ -24,13 +24,20 @@
     #meme {
         width: 100%
     } 
+    #imageClass div {
+        size: 24;
+        color : green; 
+        position : top, centered;
+        background-color: blueviolet;
+        margin: 2em;
+    }
 </style>
 </head>
 <body>
     
         <div class="meme-generator">
         <form action="" id="meme-form">
-           <input type ="text" placeholder="brand name" name="brandname">
+           
             <h1>Dank Meme Creator</h1>
                   
          <label>Top Text</label>  
@@ -40,10 +47,11 @@
           <input type="text"  id="bottom-text"></input>
 
          <label>Select an Image</label>  
-          <input type="file" id="imageFileInput"></input> 
+         <input type="url" id="image-input" >
+        <button id="imageBtn">Submit Image</button>
+        <br>
+        <img src="" id="image"> 
          
-         <button id=removeBtn>Remove Meme</button> 
-          <canvas id="meme"></canvas>
         </form>
         </div>
     
