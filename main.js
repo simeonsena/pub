@@ -9,7 +9,9 @@
 
 // New Dynamic div
 let newDiv = document.createElement('div');
-newDiv.classList.add('imageClass');
+newDiv.classList.add('topClass');
+//newDiv.classList.add('bottomClass');
+
 const form = document.querySelector('#meme-form');
 
 // prevent refresh
@@ -28,22 +30,20 @@ const getImage = document.getElementById("imageBtn").addEventListener("click", e
     let image = document.getElementById("image");
     let topTextInput = document.querySelector('#top-text').value;
     let bottomTextInput = document.querySelector('#bottom-text').value;
-     let topStyle = e.target;
-topStyle.style.classList = topStyle.innerHTML;
    
     console.log(topTextInput);
     console.log(bottomTextInput);
-    console.log(topStyle);
+   
     
 
     if (imageInput.value) image.src = imageInput.value;
     
 document.body.appendChild(newDiv);
 newDiv.append(image);
-newDiv.innerHTML+= topTextInput;
-newDiv.innerHTML+= bottomTextInput;
+newDiv.append(topTextInput);
+newDiv.append(bottomTextInput);
 newDiv.append(deleteBtn);
-
+ 
 //document.body.appendChild(deleteBtn);
   
   });
