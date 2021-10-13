@@ -16,16 +16,7 @@ const form = document.querySelector('#meme-form');
 
 // prevent refresh
 form.addEventListener('submit', e => {
-    e.preventDefault();       
-});
-
-// delete button
-const deleteBtn = document.createElement('button');
-deleteBtn.classList.add('btn');
-deleteBtn.textContent= 'Delete';
-
-
-const getImage = document.getElementById("imageBtn").addEventListener("click", e => {
+    e.preventDefault();   
     let imageInput = document.getElementById("image-input");
     let image = document.getElementById("image");
     let topTextInput = document.querySelector('#top-text').value;
@@ -34,16 +25,40 @@ const getImage = document.getElementById("imageBtn").addEventListener("click", e
     console.log(topTextInput);
     console.log(bottomTextInput);
    
-    
-
     if (imageInput.value) image.src = imageInput.value;
-    
+  
 document.body.appendChild(newDiv);
 newDiv.append(image);
 newDiv.append(topTextInput);
 newDiv.append(bottomTextInput);
-newDiv.append(deleteBtn);
- 
-//document.body.appendChild(deleteBtn);
+newDiv.append(deleteBtn);  
+
+});
+
+// delete button
+const deleteBtn = document.createElement('button');
+deleteBtn.classList.add('btn');
+deleteBtn.textContent= 'Delete';
+
+deleteBtn.addEventListener("click", () => {
+    newDiv.remove(); 
+    })
   
-  });
+    
+// const getImage = document.getElementById("imageBtn").addEventListener("click", e => {
+//     let imageInput = document.getElementById("image-input");
+//     let image = document.getElementById("image");
+//     let topTextInput = document.querySelector('#top-text').value;
+//     let bottomTextInput = document.querySelector('#bottom-text').value;
+   
+//     console.log(topTextInput);
+//     console.log(bottomTextInput);
+   
+//     if (imageInput.value) image.src = imageInput.value;
+    
+// document.body.appendChild(newDiv);
+// newDiv.append(image);
+// newDiv.append(topTextInput);
+// newDiv.append(bottomTextInput);
+// newDiv.append(deleteBtn);
+  //  });
