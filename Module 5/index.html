@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+<style>
+    .meme-generator {
+        margin: 10px auto;
+        width: 400px;
+    }
+    .meme-generator label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-top: 10px;
+        
+    }
+
+    .meme-generator input {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+#memeContainer {
+  margin: 20px;
+}
+
+.newContainerInput {
+  position: relative;
+  float: left;
+  width: 15em;
+  height: 15em;
+  margin: 1em;  
+}
+
+img {
+  position: absolute;  
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.newTopTextInput {
+  position: absolute;
+  bottom: 89%; 
+  color: white;  
+  font-weight: bolder;
+  font-size: 1.8em;
+  text-align: center;
+  width: 100%;
+}
+
+.newBottomTextInput {
+  position: absolute;
+  top: 88%;  
+  color: white;  
+  font-weight: bolder;
+  font-size: 1.8em;
+  text-align: center;
+  width: 100%;
+}
+.letter {
+ transition: color 750ms;
+}
+
+#submitBtn {
+  background-color : black;
+  border-radius: 4.5px;
+  border: 4.5px; 
+  padding: 0.6em;
+  
+}
+ 
+</style>
+</head>
+<body>
+    <div class="warpper">
+        <form class="meme-generator" action="" id="meme-form">
+           
+            <h1>
+              <span class="letter">D</span><span class="letter">a</span><span class="letter">n</span><span class="letter">k</span>
+              <span class="letter">M</span><span class="letter">e</span><span class="letter">m</span><span class="letter">e</span>
+                
+              </span><span class="letter">C</span><span class="letter">r</span><span class="letter">e</span><span class="letter">a</span><span class="letter">t</span><span class="letter">o</span><span class="letter">r</span>
+            </h1>
+                  
+         <label>Top Text</label>  
+          <input type="text"   id="top-text"></input>
+
+         <label>Bottom Text</label>  
+          <input type="text"  id="bottom-text"></input>
+
+         <label>Select an Image</label>  
+         <input type="text" id="image-url" ></input>
+
+        <button id="submitBtn" class="letter">Submit Image</button>
+        <label>Click Image to Delete</label>
+        </form>
+    </div>   
+        <div id="meme-container">
+        </div>    
+    <script src="main.js"></script>
+</body>
+</html>
