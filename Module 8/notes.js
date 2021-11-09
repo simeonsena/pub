@@ -220,3 +220,5 @@ const shorties = myFilter(words, function(word){
 const everyOtherWord = myFilter(words, function(word, i){
     return i % 2 === 0;
 });
+
+//8.9 some and every. both return a boolean.
