@@ -266,4 +266,4 @@ function partition(arr, pivot){
     const left = arr.slice(0, pivitIdx);
     const right = arr.slice(pivitIdx);
     return [left, right]
-}
+} 
