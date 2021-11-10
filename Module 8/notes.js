@@ -220,5 +220,50 @@ const shorties = myFilter(words, function(word){
 const everyOtherWord = myFilter(words, function(word, i){
     return i % 2 === 0;
 });
-
+ 
 //8.9 some and every. both return a boolean.
+// Some - iterates through arra. runs callback on all values. if at least one value true, returns true.
+
+words.some(function(word){
+    return word.length > 20
+})
+
+words.some(function(word){
+    return word.indexOf('sdf') !==-1
+})
+//every: iterates through array. runs callback on all values. if callback returns at least one false, returns false. otherwise, returns true
+words.every(function(w){
+    return w.length > 5
+})
+
+function allStrings(arr){
+    return arr.every(function(el){
+       return typeof el === 'string'
+    })
+}
+
+//find iterates through array. runs callback on each value. if callback return true at any point, it returns thr first value in the array. otherwise, it returns undefined
+let scores =[0,0 ,0,0,5,56,99,34,87,0,88]
+scores.find(function(score){
+    return score > 75
+})
+
+scores.find(function(score){
+    return score !==0 && score % 2 === 0;
+})
+
+const evenScores = scores.filter(function(score){
+    return score % 2 ===0;
+})
+const firstEven = scores.findIndex(function(score){
+    return score !==0 && score % 2 === 0;
+})
+
+function partition(arr, pivot){
+    const pivitIdx = arr.findIndex(function(el){
+        return el > pivot;
+    });
+    const left = arr.slice(0, pivitIdx);
+    const right = arr.slice(pivitIdx);
+    return [left, right]
+}
