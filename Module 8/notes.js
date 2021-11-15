@@ -242,7 +242,7 @@ function allStrings(arr){
     })
 }
 
-//find iterates through array. runs callback on each value. if callback return true at any point, it returns thr first value in the array. otherwise, it returns undefined
+//find iterates through array. runs callback on each,, value. if callback ,re,turn true at any point, it returns thr first value in the array. otherwise, it returns undefined
 let scores =[0,0 ,0,0,5,56,99,34,87,0,88]
 scores.find(function(score){
     return score > 75
@@ -267,3 +267,93 @@ function partition(arr, pivot){
     const right = arr.slice(pivitIdx);
     return [left, right]
 } 
+
+//8.3 reduce. built in array method. accepts callback. itereatres througharray. runs callback on easch value in arra. the first parameter to the callback is either the first value in the array or the optional second parameter. the first parameter is the accumulator. the returned value becomes the new value
+const nums = [20,10,99,-89,66,87,20,87,59];
+
+let total2 = 0;
+for(let num of nums){
+    total2 += num;
+}
+console.log(total2);
+
+let min = nums[0];
+for(let i = 1; i < nums.length; i++){
+    if(nums[i] < min) min = nums[i];
+}
+console.log(min)
+
+const str = 'lollapalooza'
+let charFreq ={};
+for(let char of str){
+    if(charFreq[char]){
+        charFreq[char ]=+ 1;
+    }
+    else{
+        charFreq[char] =1;
+    }
+}
+
+const words2 =['hello', 'i','love', 'you']
+words2.reduce(function(accum, nextWord){
+    console.log(accum, nextWord)
+    return accum + nextWord;
+});
+
+const midtermScores = [78,88,56,99,68,85,44];
+const finalsScores = [91,78,88,93,68,85,76];
+
+const minMidtermScore = midtermScores.reduce(function(min, nextScore){
+    // if(nextScore < min){
+    //     return nextScore;
+    // }
+    // return min;
+    //tertiary form
+    return nextScore < min ? nextScore : min;
+})
+const maxScore = midtermScores.reduce(function(max, nextScore){
+    return nextScore > max ? nextScore : max;
+});
+
+const minFinalsScore = finalsScores.reduce(function(min, nextScore){
+return nextScore < min ? nextScore : min;
+})
+
+const minOverallScore = finalsScores.reduce(function(min, nextScore){
+    return nextScore < min ? nextScore : min;
+    }, minMidtermScore)
+
+////////////////////////////
+let form = document.querySelector('form');
+
+//listen for form submission
+form.addEventListener('submit', e => {
+	e.preventDefault();
+	createMeme();
+    console.log()
+	form.reset();
+});
+
+
+
+createMeme = () => {
+	let newDiv = document.createElement('div')
+    let nameTxt = document.getElementById('name').value;
+    form.append(newDiv); 
+	newDiv.classList.add('letter');
+    newDiv.style.fontSize = "150px";
+    newDiv.append('Hello ' + nameTxt +', I Love You!')
+    //const h1 = document.querySelector('h1');
+function random(){
+	const r = Math.floor(Math.random() * 256);
+	const g = Math.floor(Math.random() * 256);
+	const b = Math.floor(Math.random() * 256);
+	return `rgb(${r},${g},${b})`
+}
+const letters = document.querySelectorAll('.letter');
+setInterval(() => {
+for(let letter of letters){
+	letter.style.color = random();
+	}
+}, 750);
+}
