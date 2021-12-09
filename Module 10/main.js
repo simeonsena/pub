@@ -1,3 +1,4 @@
+//Objec enhancements: http://curric.rithmschool.com/springboard/lectures/js-object-enhancements/
 //let and const
 /*
 
@@ -188,16 +189,4 @@ const palette = ['llavender berry', 'sun yello', 'orchd orange'];
 
 //becomes useful when adding on and combining arrays
 const paletteCopy = ['sky blue',...palette, 'grass green']
-
-   function filterOutOdds() {
-    var nums = Array.prototype.slice.call(arguments);
-    return nums.filter(function(num) {
-      return num % 2 === 0
-    });
-  }             
-  
-  
-  findMin(1,4,12,-3) // -3
-findMin(1,-1) // -1
-findMin(3,1) // 1
 
