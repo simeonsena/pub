@@ -190,3 +190,21 @@ const palette = ['llavender berry', 'sun yello', 'orchd orange'];
 //becomes useful when adding on and combining arrays
 const paletteCopy = ['sky blue',...palette, 'grass green']
 
+//10.6 De-structuring
+const teaOrder ={
+    variety     : 'oolong',
+    teaName     : 'winter sprout',
+    origin      : 'taiwan',
+    price       : '12.99',
+    hasCaffeine : true,
+    quantity    : 3
+};
+// old ES6
+// const price = teaOrder.price;
+// const quantity = teaOrder.quantity;
+// const teaName = teaOrder.teaName
+
+//De-structured
+const { price, quantity, teaName, ...others } = teaOrder;
+const {origin} = teaOrder;
+
