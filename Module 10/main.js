@@ -191,21 +191,76 @@ const palette = ['llavender berry', 'sun yello', 'orchd orange'];
 const paletteCopy = ['sky blue',...palette, 'grass green']
 
 //10.6 De-structuring
+//https://www.youtube.com/embed/p-HXBd41Pok?showinfo=0&controls=1&rel=0&autoplay=1 
 const teaOrder ={
     variety     : 'oolong',
     teaName     : 'winter sprout',
     origin      : 'taiwan',
     price       : '12.99',
     hasCaffeine : true,
-    quantity    : 3
+    quantity    : 3,
+    brewTemp    : 180
 };
 // old ES6
 // const price = teaOrder.price;
 // const quantity = teaOrder.quantity;
 // const teaName = teaOrder.teaName
 
-//De-structured
+//De-structured. can use 
 const { price, quantity, teaName, ...others } = teaOrder;
 const {origin} = teaOrder;
 
-hi
+//can set default value with destructure
+//only destructures if not found, set it. can rename and add defualt at the same time
+const {brewTemp: temp = 175}= teaOrder;
+//can assigne new variable name
+const{teaName: tea} = teaOrder;
+
+function checkout(tea){
+    const{quantity = 1, price} = tea;
+return quantity * price;    
+}
+    checkout(teaOrder);
+    const order1 ={
+        variety     : 'oolong',
+        teaName     : 'winter sprout',
+        origin      : 'taiwan',
+        price       : '12.99',
+        hasCaffeine : true,
+        quantity    : 3,
+        brewTemp    : 180
+    };
+
+//destructuring Arrays
+//only position in array matters. add commas to skip an element
+
+const order2 ={
+    variety     : 'green',
+    teaName     : 'Earl Grey, Hot',
+    origin      : 'England',
+    price       : '12.99',
+    hasCaffeine : true,
+    quantity    : 3,
+    brewTemp    : 180
+};
+function getTotal({ quantity: qty = 1, price }) {
+    return qty * price;
+}
+
+const longJumpResults = ['Tommy', 'Jessica', 'violet']
+const swimMeetResults = ['Japan', 'France', 'England']
+
+function awardMedals([gold, silver, bronze]){
+    return {
+        gold,
+        silver,
+        bronze
+    };
+}
+
+//destructuring nested  objects
+//https://www.youtube.com/embed/QQbo8N5x0M0?showinfo=0&controls=1&rel=0&autoplay=1
+//swapping variables using destructuring
+let delicious = 'Mayonaise'
+let disgusting = 'Whipped Cream'
+[disgusting, delicious] = [delicious, disgusting]
