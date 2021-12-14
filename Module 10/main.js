@@ -231,7 +231,7 @@ return quantity * price;
         brewTemp    : 180
     };
 
-//destructuring Arrays
+//destructuring Arrays http://curric.rithmschool.com/springboard/lectures/js-destructuring/
 //only position in array matters. add commas to skip an element
 
 const order2 ={
@@ -258,9 +258,100 @@ function awardMedals([gold, silver, bronze]){
     };
 }
 
-//destructuring nested  objects
+//destructuring nested  objects 
 //https://www.youtube.com/embed/QQbo8N5x0M0?showinfo=0&controls=1&rel=0&autoplay=1
 //swapping variables using destructuring
 let delicious = 'Mayonaise'
 let disgusting = 'Whipped Cream'
-[disgusting, delicious] = [delicious, disgusting]
+//[disgusting, delicious] = [delicious, disgusting]
+
+
+//10.7 Maps. with objects, all of the Keys will be converted into strings. It works with bools and 
+//1. https://www.youtube.com/embed/W9sWG3soU2g?showinfo=0&controls=1&rel=0&autoplay=1
+//set using = new Map();
+//can set key, value pairs with .set
+const myMap = new Map();
+myMap.set(7, 'seven');
+myMap.set('7', 'seven string');
+
+const empty = [];
+myMap.set(empty, 'empty array moron!');
+myMap.set(true, 'TRUE BITCHES!!!!');
+
+myMap.get(7);
+
+// https://www.youtube.com/embed/bDlyttMpbfo?showinfo=0&controls=1&rel=0&autoplay=1
+//can use functions as keys
+const add3 =(x,y) => x + y;
+const mult =(x,y) => x * y;
+
+const funcCalls = new Map();
+funcCalls.set(add3, 0);
+funcCalls.set(mult, 1);
+
+funcCalls.set(add,1);
+funcCalls.set(mult, 9);
+
+//built in methods
+const bandData = [
+    [3, '3 doors down'],
+['three', 'three dog night'],
+['nine', "nine inch nails"],
+[41, 'sum 41']
+];
+const bandMap = new Map(bandData);
+//10.3 map methods
+//   https://www.youtube.com/embed/bDlyttMpbfo?showinfo=0&controls=1&rel=0&autoplay=1
+//can take any map and turn it into an array using spread ...
+//[...bandMap]
+//can use .set to add to array. can chain set commands
+bandMap.set(182,'Blink-182').set('twenty', 'Matchbox twenty');
+
+//has
+//bandMap.has(41) // true
+//bandMap.delete('twenty')// deletes matchbox twenty
+//bandMap.clear() // emties entire array
+//bandMap.keys() allows to itereate over the keys
+//[...bandMap.keys()]
+
+//10. 4 looping with maps. https://www.youtube.com/embed/CF9T18nXPlA?showinfo=0&controls=1&rel=0&autoplay=1
+//order
+//forEach - value then key
+// bandMap.forEach((val, key) =>{
+//     console.log(key + '=>' + val)
+// });
+
+for(let [key,value ] of bandMap){
+    console.log(key, '=', value);
+}
+//10.5 Sets https://www.youtube.com/embed/v1xCpIOeb3M?showinfo=0&controls=1&rel=0&autoplay=1
+//all values in a set are unique. any type of value can be used
+// sets only contain unique variables
+
+//Also good at elimnating duplicates
+const bannedHashTags = new Set(['nofiter','justsaying', 'winning', 'yolo']);
+
+//add to a set. can be chained
+bannedHashTags.add('bestlife').add('selfie');
+//bannedHashTags.has('yolo')
+// .delete, .clear()
+
+//check if a value is in the set
+
+function filterHashTags(tags){
+    const bannedHashTags = new Set(['nofiter','justsaying', 'winning', 'yolo']);
+return tags.filter((tag)=>!bannedHashTags.has(tag))
+}
+
+// Set is really good at checking if a value is included in an array 
+const susansTags = ['happymonday','yolo','winning', 'sunset']
+
+//filtering an array
+const ages = [45,23,11,54,45,11,65,13,14,12];
+[...new Set(ages)];
+//.add, .delete, .has .clear(),
+
+// recap https://www.youtube.com/embed/t04VhDcXXOw?showinfo=0&controls=1&rel=0&autoplay=1
+
+//maps - keys can be any data type.
+
