@@ -103,7 +103,7 @@ tri2.getHypotenuse(); //15
 //https://www.youtube.com/embed/CkCmWgYi09I?showinfo=0&controls=1&rel=0&autoplay=1
 
 //create a class. Always use a Capital letter
-class Triangle{
+class Triangle2{
 //define a method for our classes
 greet(){
     console.log('Hello from triangle!!!@@@')
@@ -121,9 +121,10 @@ const secondTri = new Triangle();
 secondTri.a=09;
 secondTri.b=12;
 
-//constructors. https://www.youtube.com/embed/8B8gJeY1EC4?showinfo=0&controls=1&rel=0&autoplay=1 
-class Triangle2{
+//constructors.The constructor method is a special method of a class for creating and initializing an object instance of that class.  https://www.youtube.com/embed/8B8gJeY1EC4?showinfo=0&controls=1&rel=0&autoplay=1 
+class Triangle{
     constructor(a,b,c){
+        console.log('inside triangle constructor')
         for(let side of [a,b,c]){
         if(!Number.isFinite(side) || side <= 0){             
             throw new Error('sides mst be positive numbers');
@@ -138,7 +139,45 @@ this.c = c;
         console.log('Hello from triangle!!!@@@')
     }
     display(){
-        console.log(`Triangle with sides of ${this.a} and ${this.b}`);
+        return`Triangle with sides of ${this.a} and ${this.b} and ${this.c}`;
+    }
+    getArea(){
+        const{a, b, c} = this;
+        const s = (a + b +c)/2;
+        return Math.sqrt(s*(s-a) * (s-b) * (s-c));
+    }
+    //can also call other methods from within a method within a class
+    isBig(){
+        return this.getArea()> 50;
     }
     }
 //adding methods to a class
+
+const t1 = new Triangle(3,4,5)
+const t2 = new Triangle(5,9,10);
+t1.display();
+
+// 12.11 https://www.youtube.com/embed/8q-F8O1VBig?showinfo=0&controls=1&rel=0&autoplay=1
+//Super - The super keyword is used to access and call functions on an object's parent. When used in a constructor, the super keyword appears alone and must be used before the this keyword is used. The super keyword can also be used to call functions on a parent object.
+class RightTriangle extends Triangle{
+    constructor(a,b,c){
+        if(a*a +b*b !== c*c){
+            throw new Error('invalid C side for right triangle')
+        }
+    console.log('inside right triangle constructor')
+super(a,b,c); 
+this.hypot =c;   
+}
+//can add additional methods that don't exist on base triangle class
+isRightTriangle(){
+    return true;
+}
+// can override base methods. Simply runs first version it hits
+// display(){
+//     console.log(`Right Triangle with sides of ${this.a} and ${this.b}`);
+    // or even better, use super and concate new information
+    display(){
+        return 'Right ' + super.display();
+    }
+}
+}
