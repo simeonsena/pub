@@ -26,7 +26,31 @@ $('li').prepend('<input type="checkbox"/>')
 
 //create new elements
 //new empty h1
-$('<h1>')
-$(<h1></h1>)
+$('h1')//this does a search for elements
+$('<h1>')//this creates an element
+$('<h1>HELLO!</h1>').css('color', 'orange')
+$('<h1>HELLO!</h1>').css('color', 'orange').appendTo()
+
+$('li').after('<bold>HI</>')
+$('h1').remove()
+$('img').remove()
+
+
+//https://www.youtube.com/embed/m7q7Yu6dHzU?showinfo=0&controls=1&rel=0&autoplay=1
+//events and delegation
+$('img').click(function (){
+    alert('Hello!')
+})
+
+$('img').on('mouseleave', function(){
+    console.log("LEAVING AN IMAGE1")
+})
+$('img').on('mouseenter', function(){
+    $(this).css('border', '10px solid purple') 
+})
+
+$('img').on('click', function(){
+    $(this).remove();
+})
 
 
