@@ -48,9 +48,24 @@ $('img').on('mouseleave', function(){
 $('img').on('mouseenter', function(){
     $(this).css('border', '10px solid purple') 
 })
-
+// https://www.springboard.com/workshops/software-engineering-career-track/learn#/curriculum/16964/16004
 $('img').on('click', function(){
-    $(this).remove();
+    // $(this).fadeOut(3000, function() {
+    //     $(this).remove();
+    // })
+    $(this).animate({
+        opacity : 0,
+        width: '50px', //poor performance
+
+    }, 3000, function(){
+        $(this).remove();
+    })
 })
 
-
+$('#add-input').on('click', function (){
+    $('form').append('<input type="text"');
+})
+//EVENT DELEGATION
+$('form').on('focus', 'input', function(){
+    $(this).val('BAMBOOZLED')
+})
